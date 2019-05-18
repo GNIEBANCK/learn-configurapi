@@ -1,0 +1,48 @@
+{
+  "name": "configurapitempalte",
+  "version": "1.0.0",
+  "description": "Template for REST API with unit and component testing",
+  "files": [
+    "src/*"
+  ],
+  "scripts": {
+    "test": "cd spec && mocha --require ts-node/register *.ts",
+    "start": "cd src && ts-node ../node_modules/.bin/configurapi-runner-self -p 8081",
+    "apiunit": "cd apiunit && ts-node ../node_modules/.bin/apiunit -i requests -d responses -p parameters.json"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/GNIEBANCK/ConfigurapiTempalte.git"
+  },
+  "author": "Gregory Niebanck",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/GNIEBANCK/ConfigurapiTempalte/issues"
+  },
+  "homepage": "https://github.com/GNIEBANCK/ConfigurapiTempalte#readme",
+  "dependencies": {
+    "@types/node": "^10.14.6",
+    "apiunit": "^2.1.0",
+    "configurapi": "^1.4.7",
+    "configurapi-handler-http": "^1.3.4",
+    "configurapi-handler-json": "^1.3.1",
+    "configurapi-handler-logging": "^1.3.6",
+    "configurapi-runner-self": "^1.4.0",
+    "dotenv": "^5.0.1",
+    "file-async": "^0.2.0",
+    "lowdb": "0.16.2",
+    "readline-sync": "^1.4.9",
+    "ts-node": "^6.0.3",
+    "typescript": "^2.8.3",
+    "uuid": "^3.3.2"
+  },
+  "devDependencies": {
+    "@types/chai": "^4.1.7",
+    "@types/mocha": "^5.2.6",
+    "chai": "^4.2.0",
+    "jshint": "^2.10.2",
+    "mocha": "^5.2.0",
+    "sinon": "^5.0.7",
+    "typemoq": "^2.1.0"
+  }
+}

@@ -1,0 +1,43 @@
+import:
+    - configurapi-handler-json
+    - configurapi-handler-http
+    - configurapi-handler-logging    
+api:
+    events:
+        - name: on_before_request
+          policies:
+            - logRequestHandler
+        - name: on_after_request
+          policies:
+            - logResponseHandler
+        - name: on_success
+          policies:
+            - allowCrossOriginResourceSharingHandler:
+              - localhost(:\d+)?
+              - POST,PUT,PATCH,DELETE
+              - Content-Type,Authorization,User-Agent
+              - "true"
+        - name: options
+          policies:
+            - setResponseStatusCodeHandler:
+              - 204
+            - allowCrossOriginResourceSharingHandler:
+              - localhost(:\d+)?
+              - POST,PUT,PATCH,DELETE
+              - Content-Type,Authorization,User-Agent
+              - "true"
+        - name: ""
+          policies:
+            - setResponseHandler:
+              - 204
+        - name: list_v1_data
+          policies:
+            - validateEmptyRequestPayloadHandler
+            - listDataHandler
+        - name: post_v1_datum
+          policies:
+            - validateJsonRequestHandler
+            - createDataHandler
+        - name: list_v1_event-details
+          policies:
+            - listEventDetailsHandler

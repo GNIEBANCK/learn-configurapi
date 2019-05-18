@@ -1,0 +1,10 @@
+200
+content-type: application/json
+
+[
+    {
+        "id":".+",
+        "name":"apiunit_test_data_name",
+        "mail":"apiunit_test_data_mail"
+    }
+]

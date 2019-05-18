@@ -1,0 +1,26 @@
+{
+    "type": "object",
+    "additionalProperties": false,
+    "properties": {
+        "name": {
+            "type": "string",
+            "description": "data name field",
+            "default": "Empty string",
+            "example": "data name",
+            "maxLength": 256,
+            "minLength": 1
+        },
+        "mail": {
+            "type": "string",
+            "description": "data mail field",
+            "default": "Empty string",
+            "maxLength": 512,
+            "minLength": 1,
+            "example": "data mail"
+        }
+    },
+    "required": [
+        "name",
+        "mail"
+    ]
+}

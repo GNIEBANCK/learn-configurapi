@@ -1,0 +1,7 @@
+POST ${api-base-url}/v1/data
+Content-Type: application/json
+
+{
+    "name":"apiunit_test_data_name",
+    "mail":"apiunit_test_data_mail"
+}
